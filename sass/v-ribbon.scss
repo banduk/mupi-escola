@@ -1,0 +1,67 @@
+@import "partials/config";
+
+/*v-ribbon css */
+.v-ribbon{
+  @include background(
+    radial-gradient(center top, circle farthest-side, $green1 0%, $green2 100%)
+  );
+  width: 3.5em;
+  height: 7em;
+  position: relative;
+  border-top-right-radius: .2em;
+  border-top-left-radius: .2em;
+  margin: auto;
+  font-family: 'Kite One', sans-serif;
+  i{
+    width: 86%;
+    height: 124%;
+    display: block;
+    z-index: 3;
+    position: relative;
+    left: 7%;
+    border-right: dashed 0.0625em #333;
+    border-left: dashed 0.0625em #333;
+
+    span{
+      @include rotate(-90deg);
+      writing-mode:tb-rl;
+      color: #FFF;
+      white-space: nowrap;
+      display: block;
+      text-align: left;
+      bottom: -3.3em;
+      position: relative;
+      text-shadow: 0.0625em 0.0625em 0.0625em #333;
+      font-style: normal;
+      font-weight: bold;
+      width: 7em;
+      left: -1.95em;
+      text-align: center;
+    }
+
+  }
+
+  &:before{
+    content: "";
+    position: absolute;
+    bottom: -2.4em;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 2.5em solid $green2;
+    border-right: 2.5em solid transparent;
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    bottom: -2.4em;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 2.5em solid $green2;
+    border-left: 2.5em solid transparent;
+  }
+
+  margin-bottom: 2.5em;
+}
+

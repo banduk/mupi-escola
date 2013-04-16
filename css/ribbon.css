@@ -1,0 +1,77 @@
+/* line 5, ../sass/ribbon.scss */
+.v-ribbon-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 9, ../sass/ribbon.scss */
+.v-ribbon {
+  padding: .34em 1em;
+  margin: 0 0 40px 0;
+  position: relative;
+  color: #ffffff;
+  font-size: 1.8em;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1eb240), color-stop(100%, #17a733));
+  background: -webkit-linear-gradient(top, #1eb240, #17a733);
+  background: -moz-linear-gradient(top, #1eb240, #17a733);
+  background: -o-linear-gradient(top, #1eb240, #17a733);
+  background: linear-gradient(top, #1eb240, #17a733);
+  display: inline-block;
+}
+
+/* line 25, ../sass/ribbon.scss */
+.v-ribbon::before, .v-ribbon::after {
+  content: "";
+  width: .2em;
+  bottom: -.5em;
+  position: absolute;
+  display: block;
+  border: .9em solid #1EB240;
+  -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+  z-index: -2;
+}
+
+/* line 36, ../sass/ribbon.scss */
+.v-ribbon::before {
+  left: -1.35em;
+  border-right-width: .75em;
+  border-left-color: transparent;
+}
+
+/* line 42, ../sass/ribbon.scss */
+.v-ribbon::after {
+  right: -1.35em;
+  border-left-width: .75em;
+  border-right-color: transparent;
+}
+
+/* line 48, ../sass/ribbon.scss */
+.v-ribbon span::before, .v-ribbon span::after {
+  content: "";
+  bottom: -.5em;
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #067514 transparent transparent transparent;
+  z-index: -1;
+}
+
+/* line 58, ../sass/ribbon.scss */
+.v-ribbon span::before {
+  left: 0;
+  border-width: .5em 0 0 .5em;
+}
+
+/* line 63, ../sass/ribbon.scss */
+.v-ribbon span::after {
+  right: 0;
+  border-width: .5em .5em 0 0;
+}

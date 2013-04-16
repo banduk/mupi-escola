@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="css/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 8]>
+      <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <title>Escola Mupi</title>
+  </head>
+
+
+  <body>
+    <div class="fixed-header-wrapper" >
+      <section id="fixed-header">
+        <div class="name">
+          Escola Mupi
+        </div>
+        <form class="subsc-form" action="<?php echo get_template_directory_uri(); ?>/subscribe.php" id="invite" method="POST">
+          <div class="fields">
+            <p class="field">
+              <input type="text" name="name" placeholder="Seu nome" data-validate="validate(required)">
+              <i class="icon-user "></i>
+            </p>
+            <p class="field">
+              <input type="text" name="email" data-validate="validate(required, email)" placeholder="seu@email.com">
+              <i class="icon-envelope "></i>
+            </p>
+          </div>
+          <p class="submit">
+            <button type="submit" name="submit"><i class="icon-arrow-right icon-large"></i></button>
+          </p>
+        </form>
+      </section>
+      <div id="show-form">Quero me inscrever <i class="icon-circle-arrow-down"></i></div>
+    </div>
+
+    <div class="wrapper header">
+      <div class="flash-msg"> 
+        <p class="msg success">aLKJDB LKAShf çoasdhfçSHBLKHDS VLKBAÇ OHÇS HV</p>
+      </div>
+
+      <header>
+        <div class="slogan">
+          <h1>Escola MUPI</h1> 
+          <h2>Aqui vai um slogan legal!</h2>
+        </div>
+        <div class="video">
+          <iframe 
+              class="videoplayer"
+              src="http://www.youtube.com/embed/Ju7rPRuyN1o?wmode=opaque"
+              frameborder="0" 
+              allowfullscreen>
+            </iframe>
+        </div>
+      </header> 
+    </div>  
+    
+    <!-- post-header -->
+    <div class="wrapper odd-row">
+      <section id="signup" class="post-header">
+        <div class="pre-form">
+          <p class="want-to-join">Quer participar?</p>
+          <p class="subscribe">Nós avisamos quando estiver pronto!</p> 
+        </div> 
+
+        <div class="subsc-form">
+          <form class="subsc-form" action="<?php echo get_template_directory_uri(); ?>/subscribe.php" id="invite" method="POST">
+            <div class="fields">
+              <p class="field">
+                <input type="text" name="name" placeholder="Seu nome" data-validate="validate(required)">
+                <i class="icon-user "></i>
+              </p>
+              <p class="field">
+                <input type="text" name="email" data-validate="validate(required, email)" placeholder="seu@email.com">
+                <i class="icon-envelope "></i>
+              </p>
+            </div>
+            <p class="submit">
+              <button type="submit" name="submit"><i class="icon-arrow-right icon-large"></i></button>
+            </p>
+          </form>
+        </div>
+      </section>
+    </div>
+    <!-- post-header -->
+
+    <!-- Introduction -->
+    <div class="wrapper even-row">
+      <section class="introduction">
+        <div class="h-ribbon-container">
+            <div class="h-ribbon"><span>Sobre o projeto</span></div>
+        </div>
+
+        Aqui vai uma descrição sucinta mas que anime bastante nossos futuros clientes! Eles tem que se animar para ler a próxima parte que explica como funciona todo o nosso processo! Temos que decidir se atacaremos todos os públicos de uma vez, como faz o <a href="http://cursoprogramacao.com">Cursoprogramação</a> ou se faremos algo mais focado!
+      
+      </section>
+    </div>
+    <!-- Introduction -->
+
+     <!-- About -->
+    <div class="wrapper odd-row">
+      <article class="pitch">
+        <section class="left">
+          <div class="v-ribbon">
+            <i class="i-ribbon"><span>Metodologia</span></i>
+          </div>
+          <div class="illustration">
+            conteudo  
+          </div>
+        </section>
+
+        <section class="right">
+          <div class="v-ribbon">
+            <i class="i-ribbon"><span>Planos</span></i>
+          </div>
+            
+          <div class="illustration">
+            conteudo  
+          </div>
+        </section>
+      </article>
+    </div>
+    <!-- About -->
+
+    <!-- Footer -->
+    <div class="wrapper even-row">
+      <div class="team-about">
+        <div class="h-ribbon-container">
+            <div class="h-ribbon"><span>
+              Quem somos
+            </span></div>
+        </div>
+        <div class="author-about">
+          <img src="http://matchboxideas.com.br/matchbox/wp-content/uploads/2013/02/ana.jpg"/>
+          <h5>Ana Rute Mender</h5>
+          <p class="profile_body">
+            Formada em midialogia pela Unicamp, sou apaixonada pela web e tudo que ela pode proporcionar. Acredito no Mupi como uma forma de unir pessoas aravés da troca de conhecimento.
+          </p>
+        </div>
+        <div class="author-about">
+          <img src="http://matchboxideas.com.br/matchbox/wp-content/uploads/2013/02/banduk.jpg"/>
+          <h5>Maurício Banduk</h5>
+          <p class="profile_body">
+            Engenheiro de Computação, apaixonado por web e todas as tecnologias ligadas à ela. Colaboração, novidade e experiência são palavras que o guiam para o desenvolvimento.
+          </p>
+        </div>
+        <div class="author-about">
+          <img src="http://matchboxideas.com.br/matchbox/wp-content/uploads/2013/02/paulets.jpg"/>
+          <h5>Paula Furtado</h5>
+          <p class="profile_body">
+            Formada em Letras, pesquisadora em educação e tecnologia. Louca por literatura, música popular brasileira, internet e pessoas movidas pela paixão de acrescentar algo no mundo!
+          </p>
+        </div>
+        <div class="author-about">
+          <img src="http://matchboxideas.com.br/matchbox/wp-content/uploads/2013/02/vir.jpg"/>
+          <h5>Virgílio Santos</h5>
+          <p class="profile_body">
+            Formado em Computação pela Unicamp e desenvolvedor de software. Tenho um interesse muito grande por Tecnologia e Educação e estou sempre envolvido em projetos nessa área, como o Mupi!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper odd-row">
+      <footer>
+        <div class="contact">
+          <div class="phone">
+            <a href="tel:+551932893914">
+              <i class="icon-phone "></i> +55 (19)32893914
+            </a>
+          </div>
+          <div class="mail">
+            <script type="text/javascript">/*<![CDATA[*/(function(){var ML="cmk-@uph>ieol<a/ =n:.rs\"tvf",MI="=>@0<>FFAG1>9<H;3<9B2G@7E:JAG1>9<H;C@0;BH>H;41569D1:G@8=9@0<>FFAG90;B3:BI:<;6:G8=?98@0;BH>H;41569D1:=?>8",OT="";for(var j=0;j<MI.length;j++){OT+=ML.charAt(MI.charCodeAt(j)-48);}document.write(OT);}());/*]]>*/</script><noscript>*protected email*</noscript>
+          </div>
+        </div>
+          
+        <ul class="social">
+          <li>
+            <a href="http://www.facebook.com/mupi.br" title="facebook" class="fb"></a>
+          </li>
+          <li>
+            <a href="http://www.linkedin.com/company/mupi" title="linkedin" class="ln"></a>
+          </li>
+          <li>  
+            <a href="https://twitter.com/mbideas" title="twitter" class="tw"></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <!-- Footer -->   
+
+
+  </body>
+</html>

@@ -1,0 +1,33 @@
+@import "blueprint";
+
+// Blueprint config
+$blueprint-grid-columns: 24;
+$blueprint-container-size: 950px;
+$blueprint-grid-margin: 10px;
+$blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
+
+$_columns: $blueprint-grid-columns;
+$_container-size: $blueprint-container-size;
+$_grid-margin: $blueprint-grid-margin;
+
+$fontAwesomePath:   "font";
+
+$green1: #1EB240;
+$green2: $green1 + #070b0d;
+$green3: $green1 - #043c11;
+$green4: $green3 + #070b0d;
+$green5: #77FE96;
+$green6: #1EB241;
+
+$gray1: #e8e8e8;
+$gray1-shadow1: $gray1 + #0b0b0b;
+$gray1-shadow2: $gray1 - #030303;
+
+$gray2: #f6f6f6;
+$gray2-shadow1: $gray2 + #0b0b0b;
+$gray2-shadow2: $gray2 - #030303;
+
+$red: #B21E40;
+
+
+$break-small: 470px;

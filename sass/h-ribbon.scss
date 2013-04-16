@@ -1,0 +1,73 @@
+@import "compass/css3";
+@import "partials/config";
+
+
+
+.h-ribbon-container{
+  position: relative;
+  z-index: 1;
+} 
+.h-ribbon {
+  padding: .34em 0em;
+  margin: 0 0 40px 0;
+  position:relative;
+  color: #ffffff;
+  font-size: 1.8em;
+  text-align: center;
+  letter-spacing:0.1em;
+  @include text-shadow(0px -1px 0px rgba(0,0,0,0.3));
+  @include box-shadow(inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 20px rgba(0,0,0,0.1), 0px 1px 1px rgba(0,0,0,0.4)); 
+  //@include background(linear-gradient(top,#1eb2df, #17a7d2));
+  @include background(linear-gradient(top,$green1, $green2));
+  display: inline-block;
+}
+
+
+.h-ribbon::before, .h-ribbon::after {
+  content: "";
+  width:.2em;
+  bottom:-.5em;
+  position:absolute;
+  display:block;
+  border: .9em solid $green1;
+  @include box-shadow(0px 1px 0px rgba(0,0,0,0.4));
+  z-index: -2;
+}
+
+.h-ribbon::before {
+  left:-1.1em;
+  border-right-width: .75em;
+  border-left-color:transparent;
+}
+
+.h-ribbon::after {
+  right:-1.1em;
+  border-left-width: .75em;
+  border-right-color:transparent;
+
+}
+.h-ribbon span{
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
+  padding: 0.2em 1em;
+}
+
+.h-ribbon span::before, .h-ribbon span::after {
+  content:"";
+  bottom:-.5em;
+  position:absolute;
+  display:block;
+  border-style:solid;
+  border-color: #067514 transparent transparent transparent;
+  z-index: -1;
+}
+
+.h-ribbon span::before {
+  left: 0;
+  border-width: .5em 0 0 .5em;
+}
+
+.h-ribbon span::after {
+  right: 0;
+  border-width: .5em .5em 0 0;
+}

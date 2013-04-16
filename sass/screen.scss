@@ -1,0 +1,418 @@
+@import "partials/normalize";
+@import "partials/config";
+@import "blueprint";
+@import "blueprint/buttons";
+@import "compass/css3";
+@import "blueprint/liquid";
+@import "h-ribbon";
+@import "v-ribbon";
+@import "subsc-form";
+@import "my/*.png";
+@include all-my-sprites;
+
+// Defining border-box property for all elements
+*, *::before, *::after {
+  @include box-sizing(border-box);
+}
+
+// Style for body
+body{
+  text-align: center;
+  background-color: $gray2; // Fall-back
+  i:not(.i-ribbon) {
+    font-family: FontAwesome !important;
+  }
+}
+
+
+// Wraps all elements in page but allow background till the edge of view-port
+.wrapper{
+  padding-bottom: 80px;
+  
+  // All child of wrapper respect the with in _base.scss but has visible overflow
+  & > *{
+    max-width: $_container-size;
+    margin: 0 auto;
+    @include pie-clearfix; 
+    overflow: visible; // So we can have those nice ribbons overflowing
+  }
+   
+  &.odd-row{
+    background-color: $gray2;
+    border-top: 2px solid $gray1-shadow2;
+
+    // Border 'shadow'
+    &::before{
+      content: "";
+      height: 0px;
+      display: block;
+      border-top: 2px solid $gray1-shadow1;
+    }
+  }
+
+  &.even-row{
+    border-top: 2px solid $gray2-shadow2;
+    @include background(linear-gradient(left, $gray2 10%, $gray1 50%, $gray2 90%));
+
+    // Border 'shadow'
+    &::before{
+      content: "";
+      height: 0px;
+      display: block;
+      border-top: 2px solid $gray2-shadow1;
+    } 
+  }
+
+  // The footer do not have a padding bottom
+  &:last-child{
+    padding-bottom: 0;
+  }
+
+  // Header wrapper style
+  &.header{
+    background: url(img/header-patt.png);
+    padding: 0;
+
+    // Flash message style
+    .flash-msg{
+      @include border-bottom-left-radius(5px);
+      position: fixed;
+      right: 0;
+      z-index: 6;
+      border: $gray2 solid;
+      border-width: 0 0 5px 5px;
+      background-color: $gray2;
+
+      display: block;
+      //display: none;
+      
+      &::after{
+        content: "\2297";
+        position: absolute;
+        left: -.55em;
+        bottom: -.55em;
+        font-size: 1.5em;
+        background-color: $gray2;
+        width: 1em;
+        height: 1em;
+        @include border-radius(1.5em);
+      }
+
+      .error{
+        background: rgba($red, 0.6);
+      }
+      .success{
+        background: rgba($green2, 0.6);
+      }
+
+      p{
+        padding: 15px;
+        @include text-shadow(rgba(#fff, 0.6) 0px 0px 3px);
+        margin: 0;
+        @include border-bottom-left-radius(5px);
+        // Close button
+        /*&::after{
+          content: "<i class='icon-remove-circle icon-4x close-flash'></i>"
+        }*/
+      }
+    }
+  }
+}
+
+// Defining margin for the horizontal ribbons
+.h-ribbon-container {
+  margin-top: -40px;
+}
+
+.fixed-header-wrapper{
+  max-width: $_container-size;
+  margin: 0 auto;
+  overflow: visible; // So we can have those nice ribbons overflowing
+
+  #show-form{
+    display: none;
+    position: fixed;
+    z-index: 5;
+    text-align: center;
+    font-size: 1.8em;
+    line-height: 1.8em;
+    background-color:rgba(#fff,0.92);
+    width: 100%;
+  }
+
+  #fixed-header{
+    position: fixed;
+    display: none;    
+    background-color:rgba(#fff,0.94);
+    z-index: 5;
+    height: 100px;
+    @include box-shadow(rgba($gray2, 0.6) 0 0 4px 4px);
+    .name{
+      font-size: 3em;
+      line-height: 100px;
+      @include text-shadow(rgba(#000, 0.7) 0px 0px 5px);
+    }
+    .subsc-form, .name{
+      @include column(12);
+    }
+    &.visible-header{
+      display: block;
+      
+      @media screen and ( max-width: $_container-size ) {
+        display: none;
+        /*
+        &.visible-header + #show-form{
+          display: block;
+        }*/
+      }
+      
+    }
+    /*&.visible-form{
+      display: block;
+      .subsc-form{
+        margin: 3.1em auto 0 auto;
+      }
+      .name{
+        display: none;
+      }
+    }*/
+  }
+}
+
+
+
+// Header style
+header {
+  @include pie-clearfix; // Cause we'll have columns
+  padding: 50px 0 100px;
+  
+  // slogan style
+  .slogan{
+    @include column(12); // half page
+    h1{
+      font-size: 5em;
+      margin: 0;
+    }
+
+    h2{
+      font-size: 1.5em;
+      margin: 30px;
+    }   
+  }
+
+  //Video style
+  .video{
+    @include column(12); // half page
+    @include last; // we need it in the last column
+    height: 100%;
+
+    // Iframe style, take care with size (not sure how it works)
+    iframe{
+      width: 25em;
+      height: 16em;
+      @include box-shadow(rgba($gray1-shadow2, 0.9) 0 0 25px 25px);
+    }
+  }
+
+  .video, .slogan{
+    @media screen and ( max-width: $_container-size ) {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+// Where the for is
+.post-header{ 
+  @include pie-clearfix; // Cause we'll have columns
+  margin-top: -45px;
+  
+  
+  .pre-form, .subsc-form{
+    @include column(12); // Each one with half page
+    
+    &.subsc-form{
+      @include last; // we need it in the last column
+    }
+    @media screen and ( max-width: $_container-size ) {
+      width: $_container-size/2;
+      float: none;
+      display: block;
+      margin: 0 auto 20px;
+      @include pie-clearfix;
+      &.subsc-form{
+        margin: 0 auto;
+      }
+    }
+  }
+ 
+
+  // Style for the messages at pre-form
+  .pre-form p{
+    margin: 0px;
+    &.want-to-join{
+      text-align: left;
+      font-size: 2.8em;
+    }
+    &.subscribe{
+      text-align: right;
+      font-size: 1.5em;
+    }    
+    &.want-to-join, &.subscribe{
+      @media screen and ( max-width: $_container-size ) {
+          text-align: center;
+      }
+    }
+  }
+}
+
+.introduction{
+  padding: 0 40px;
+}
+
+// We call a pitch 
+.pitch {
+  @include pie-clearfix;
+  overflow: visible;
+
+  .illustration{
+    padding: 20px;
+    margin-left: 3.5em;
+  }
+
+  
+
+  .left, .right {
+    @include column(12);
+    &.right{
+      @include last;
+    }
+    @media screen and (max-width: $_container-size) {
+      width: $_container-size/2;
+      float: none;
+      display: block;
+      margin: 0 auto 20px auto;
+      @include pie-clearfix;
+      &.right{
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .wide {
+    @include column(24);
+  }
+
+  .left, .right, .wide{
+    position: relative;
+  } 
+
+
+  .videoplayer {
+    border: 5px solid black;
+  }
+
+  .v-ribbon{
+    top: -5px;
+    float: left;
+  }
+}
+
+.team-about{
+  @include pie-clearfix;
+   
+  @media screen and ( max-width: $_container-size ) {
+    width: $_container-size/2;
+    margin: 0 auto;
+  }
+
+  .author-about{
+    @include column(6);
+    margin: 0 auto;
+
+    &:last-child{
+      @include last;
+    }
+
+    @media screen and ( max-width: $_container-size ) {
+      &:nth-child(even){
+        clear: both;
+      }
+      &:nth-child(odd){
+        @include last;
+      }
+    }
+
+    img{
+      @include border-radius(80px);
+      border: 5px solid $gray1;
+    }
+    p{
+      font-size: 0.9em;
+      text-align: justify;
+      margin: 0 15px;
+    }
+  }
+}
+
+footer{
+  @include pie-clearfix;
+  padding: 20px 0;
+  height: 33px;
+  line-height: 33px;
+  @media screen and ( max-width: $_container-size ) {
+    width: $_container-size/2;
+    margin: 0 auto;
+  }
+  .contact{
+    @include column(12);
+    .mail, .phone{
+      display: inline-block;
+      margin: 0 20px;
+      a, &{
+        text-decoration: none;
+        color: black;
+
+        &:hover{
+          color: $green3;
+        }
+      }
+
+    }
+  }
+  .social{
+    @include column(12);
+    @include last;
+    margin: 0;
+    padding: 0;
+    li{
+      display: inline-block;
+      a{
+        display: block;
+        width: 33px;
+        height: 33px;
+      }
+      .fb{
+        @include my-sprite(fb); 
+        &:hover{
+          @include my-sprite(fb-hover); 
+        }
+      }
+
+      .ln{
+        @include my-sprite(ln); 
+        &:hover{  
+          @include my-sprite(ln-hover); 
+        }
+      }
+
+      .tw{
+        @include my-sprite(tw); 
+        &:hover{
+          @include my-sprite(tw-hover); 
+        }
+      }
+
+    }
+  }
+}

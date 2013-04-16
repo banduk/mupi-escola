@@ -1,0 +1,84 @@
+/* line 6, ../sass/h-ribbon.scss */
+.h-ribbon-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 10, ../sass/h-ribbon.scss */
+.h-ribbon {
+  padding: .34em 0em;
+  margin: 0 0 40px 0;
+  position: relative;
+  color: #ffffff;
+  font-size: 1.8em;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.4);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1eb240), color-stop(100%, #25bd4d));
+  background: -webkit-linear-gradient(top, #1eb240, #25bd4d);
+  background: -moz-linear-gradient(top, #1eb240, #25bd4d);
+  background: -o-linear-gradient(top, #1eb240, #25bd4d);
+  background: linear-gradient(top, #1eb240, #25bd4d);
+  display: inline-block;
+}
+
+/* line 26, ../sass/h-ribbon.scss */
+.h-ribbon::before, .h-ribbon::after {
+  content: "";
+  width: .2em;
+  bottom: -.5em;
+  position: absolute;
+  display: block;
+  border: 0.9em solid #1eb240;
+  -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+  z-index: -2;
+}
+
+/* line 37, ../sass/h-ribbon.scss */
+.h-ribbon::before {
+  left: -1.1em;
+  border-right-width: .75em;
+  border-left-color: transparent;
+}
+
+/* line 43, ../sass/h-ribbon.scss */
+.h-ribbon::after {
+  right: -1.1em;
+  border-left-width: .75em;
+  border-right-color: transparent;
+}
+
+/* line 49, ../sass/h-ribbon.scss */
+.h-ribbon span {
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
+  padding: 0.2em 1em;
+}
+
+/* line 55, ../sass/h-ribbon.scss */
+.h-ribbon span::before, .h-ribbon span::after {
+  content: "";
+  bottom: -.5em;
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #067514 transparent transparent transparent;
+  z-index: -1;
+}
+
+/* line 65, ../sass/h-ribbon.scss */
+.h-ribbon span::before {
+  left: 0;
+  border-width: .5em 0 0 .5em;
+}
+
+/* line 70, ../sass/h-ribbon.scss */
+.h-ribbon span::after {
+  right: 0;
+  border-width: .5em .5em 0 0;
+}
